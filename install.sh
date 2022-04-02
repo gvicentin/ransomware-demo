@@ -38,11 +38,15 @@ __GPG=$(which gpg)
 __remove_original=${1:-"true"}
 __path=${2:-"./data"}
 
+readonly __pass_length="64"
+readonly __tar_file="${__path}/files.tar.gz"
+readonly __key_file="${__path}/passphrase.encrypted"
+
 # generate random passphrase
 readonly __passphrase=$( 
-    ${__HEAD} /dev/urandom --lines 50 | 
-    ${__TR} --delete --complement '[:alnum:]' | 
-    ${__CUT} --characters -31
+    "${__HEAD}" /dev/urandom --lines 100 | 
+    "${__TR}" --delete --complement '[:alnum:]' | 
+    "${__CUT}" --characters -"${__pass_length}"
 )
 
 if [ ! -e "${__path}" ]; then
@@ -54,10 +58,8 @@ if [ ! -e "${__path}" ]; then
 fi
 
 # encrypt files
-readonly __tar_file="${__path}/files.tar"
-${__TAR} --create --file "${__tar_file}" ${__path}/* &> /dev/null || true
+${__TAR} --create --gzip --file "${__tar_file}" ${__path}/* &> /dev/null || true
 ${__GPG} --batch --passphrase "${__passphrase}" --symmetric "${__tar_file}" &> /dev/null || true
-
 
 if [ "${__remove_original}" = "true" ]; then
 
@@ -66,4 +68,5 @@ if [ "${__remove_original}" = "true" ]; then
 
 fi
 
-echo ${__passphrase}
+# create passphrase file
+echo "${__passphrase}" | openssl rsautl -encrypt -pubin -inkey id_rsa.pub.pem > "${__key_file}"

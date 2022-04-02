@@ -1,2 +1,10 @@
 *.tar
 *.tar.gpg
+*.key
+
+# keys
+id_rsa
+id_rsa.pub
+id_rsa.pub.pem
+
+data/
