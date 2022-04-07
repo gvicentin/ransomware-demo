@@ -32,3 +32,6 @@ find data -mindepth 1 -maxdepth 1 -not -name "*.gpg" | xargs -I{} rm -rf {}
 
 # Decriptografa chave
 cat encrypted.txt | openssl rsautl -decrypt -inkey my_rsa
+
+# Descriptografar arquivos
+gpg --batch --passphrase $PASSPHRASE --decrypt files.tar.gz.gpg > files.tar.gz
