@@ -15,9 +15,90 @@
 #  ::::::::. ###. ###:: ##:::: ##: ##:::. ##: ########::::::::::::
 #  :::::::::...::...:::..:::::..::..:::::..::........:::::::::::::
 #
-# Author:      Guilherme Vicentin
-# Matrícula:   CP300760X
-# Dísciplina:  Segurança da Informação
+#   Author:      Guilherme Vicentin
+#   Matrícula:   CP300760X
+#   Dísciplina:  Segurança da Informação
+#  :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+#  INTRODUÇÃO
+#  :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+#
+#
+#    Ransom   +   ware
+#   (Resgate)   (Algo relacionado a computadores)
+#
+#
+#   "  Ransomware é um tipo de malware que ameaça publicar os dados 
+#   pessoais da vítima ou bloquear perpetuamente o acesso a eles, 
+#   a menos que um resgate seja pago. Se implementado adequadamente, 
+#   recuperar os arquivos sem a chave criptográfica é um problema 
+#   considerado intratável  "
+#
+#   ---
+#   Fonte: Wikipedia.
+#
+#
+#  :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+#  :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+#  INTRODUÇÃO
+#  :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+#
+#  -> Segundo pesquisa recente, a maioria das organizações está 
+#     mais preocupada com ransomware do que com qualquer outra
+#     ameaças cibernéticas
+#
+#  -> Ataques dessa natureza têm crescido 1.070% por ano
+#
+#  -> A principal preocupação é o risco de perda de dados, com a perda
+#     de produtividade e a interrupção das operações logo em seguida
+#
+#  -> 49% era pagariam o resgate à vista e, para outros 25%, 
+#     isso dependia do valor do resgate.
+#
+#   ---
+#   Relatório Global de Ransoware, FortiNet 2021.
+#
+#  :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+#  :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+#  OPERAÇÃO
+#  :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+#
+#  1) PRÉ-ATAQUE
+#       a. atacante gera par de chaves assiméticas
+#       b. chave pública é inserida no malware
+#
+#  2) INFECÇÃO
+#       a. atacante realiza instalação do software na máquina da vítima
+#
+#  3) SEQUESTRO DOS DADOS
+#       a. malware gera uma chave simétrica
+#       b. utiliza tal chave para criptografar os dados
+#       c. criptografa a chave simétrica com chave pública do atacante
+#
+#  4) FINALIZAÇÃO
+#       a. pós pagamento, atacante devolve chave simétrica descriptada
+#
+#  :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+#  :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+#  INFECÇÃO
+#  :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+#
+#  1) PRÉ-ATAQUE
+#       a. atacante gera par de chaves assiméticas
+#       b. chave pública é inserida no malware
+#
+#  2) INFECÇÃO
+#       a. atacante realiza instalação do software na máquina da vítima
+#
+#  3) SEQUESTRO DOS DADOS
+#       a. malware gera uma chave simétrica
+#       b. utiliza tal chave para criptografar os dados
+#       c. criptografa a chave simétrica com chave pública do atacante
+#
+#  4) FINALIZAÇÃO
+#       a. pós pagamento, atacante devolve chave simétrica descriptada
+#
+#  :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
 
 # Gerando uma chave alpha numérica com 64 caracteres
 head /dev/urandom --lines 100 |                 \
