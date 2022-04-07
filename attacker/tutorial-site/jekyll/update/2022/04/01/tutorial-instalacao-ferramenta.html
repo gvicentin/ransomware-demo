@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Instalação de Ferramenta para Exploit! | Tutoriais Hacker</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Instalação de Ferramenta para Exploit!" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Neste tutorial, você instalará e configurará o exploit-tool em sua máquina. Através do ExpoitTool você conseguirá explorar vulnerabilidades em outras máquinas conectadas a mesma rede que você. A partir das vulnerabilidades encontradas você poderá tomar conta dos computadores que não estão sobre seu controle." />
+<meta property="og:description" content="Neste tutorial, você instalará e configurará o exploit-tool em sua máquina. Através do ExpoitTool você conseguirá explorar vulnerabilidades em outras máquinas conectadas a mesma rede que você. A partir das vulnerabilidades encontradas você poderá tomar conta dos computadores que não estão sobre seu controle." />
+<link rel="canonical" href="/jekyll/update/2022/04/01/tutorial-instalacao-ferramenta.html" />
+<meta property="og:url" content="/jekyll/update/2022/04/01/tutorial-instalacao-ferramenta.html" />
+<meta property="og:site_name" content="Tutoriais Hacker" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-04-01T09:51:27-03:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Instalação de Ferramenta para Exploit!" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-04-01T09:51:27-03:00","datePublished":"2022-04-01T09:51:27-03:00","description":"Neste tutorial, você instalará e configurará o exploit-tool em sua máquina. Através do ExpoitTool você conseguirá explorar vulnerabilidades em outras máquinas conectadas a mesma rede que você. A partir das vulnerabilidades encontradas você poderá tomar conta dos computadores que não estão sobre seu controle.","headline":"Instalação de Ferramenta para Exploit!","mainEntityOfPage":{"@type":"WebPage","@id":"/jekyll/update/2022/04/01/tutorial-instalacao-ferramenta.html"},"url":"/jekyll/update/2022/04/01/tutorial-instalacao-ferramenta.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Tutoriais Hacker" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Tutoriais Hacker</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">Sobre</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Instalação de Ferramenta para Exploit!</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2022-04-01T09:51:27-03:00" itemprop="datePublished">Apr 1, 2022
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Neste tutorial, você instalará e configurará o <code class="language-plaintext highlighter-rouge">exploit-tool</code> em sua máquina. Através do <strong>ExpoitTool</strong> você conseguirá explorar vulnerabilidades em outras máquinas conectadas a mesma rede que você. A partir das vulnerabilidades encontradas você poderá tomar conta dos computadores que não estão sobre seu controle.</p>
+
+<p><strong>Use a ferramenta apenas em computadores próprios</strong>, lembre-se que fazer isso em outros computadores ou dispositivos é crime.</p>
+
+<h2 id="download-e-instalção">Download e Instalção</h2>
+
+<p>Para instalar a ferramenta , basta executarmos o seguinte comando:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="c"># rodando script de instalação</span>
+curl <span class="nt">-sL</span> exploit-tool.com/install.sh | bash
+
+<span class="c"># verficando instalação</span>
+which exploit-tool</code></pre></figure>
+
+<h2 id="como-utilizar">Como Utilizar</h2>
+
+<p>O ExploitTool é um utilitário open source para exploração de redes e auditoria de segurança. Criado por Gordon Lyon em 1997, ele permite escanear desde hosts únicos a grandes redes de dispositivos, tanto local quanto remotamente, por meio do envio de pacotes e análise das repostas recebidas. O exploit-tool roda em Linux, BSD, OS X e Windows, possuindo interface padrão em linha de comandos.</p>
+
+<p>Vamos aos exemplos de uso do exploit-tool agora.</p>
+
+<h3 id="listar-as-portas-abertas-em-um-host-remoto">Listar as portas abertas em um host remoto:</h3>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">exploit-tool 192.168.0.0/24</code></pre></figure>
+
+<h3 id="detecção-de-versão-de-serviços">Detecção de Versão de Serviços</h3>
+
+<p>A detecção de serviço é uma das técnicas mais usadas no exploit-tool, permitindo por exemplo identificar vulnerabilidades de segurança ou simplesmente verificar se um serviço está rodando em uma porta específica.</p>
+
+<p>A flag sV habilita detecção de serviço, retornando informações sobre serviços e versões.</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">exploit-tool <span class="nt">-sV</span> 192.168.0.0/24</code></pre></figure>
+
+<h3 id="usar-o-modo-agressivo">Usar o Modo Agressivo</h3>
+
+<p>O modo agressivo é um modo de operação especial do exploit-tool que é ativado com o uso da flag A, habilitando a detecção de S.O., versão, escaneamento de script e traceroute:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">exploit-tool <span class="nt">-A</span> 192.168.0.0/24</code></pre></figure>
+
+
+  </div><a class="u-url" href="/jekyll/update/2022/04/01/tutorial-instalacao-ferramenta.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Tutoriais Hacker</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Tutoriais Hacker</li><li><a class="u-email" href="mailto:g.vicentin@aluno.ifsp.edu.br">g.vicentin@aluno.ifsp.edu.br</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/gvicentin"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">gvicentin</span></a></li><li><a href="https://www.twitter.com/gvicentin"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">gvicentin</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Este site foi criado para a apresentação do Trabalho 1 da disciplina de Segurança da Informação. Trabalho realizado pelo aluno Guilherme Vicentin sobre Ransomware.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

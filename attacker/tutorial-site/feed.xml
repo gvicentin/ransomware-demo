@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2022-04-07T10:45:07-03:00</updated><id>/feed.xml</id><title type="html">Tutoriais Hacker</title><subtitle>Este site foi criado para a apresentação do Trabalho 1 da disciplina de Segurança da Informação. Trabalho realizado pelo aluno Guilherme Vicentin sobre Ransomware.</subtitle><entry><title type="html">Primeiros passos no Linux!</title><link href="/jekyll/update/2022/04/07/linux-primeiros-passos.html" rel="alternate" type="text/html" title="Primeiros passos no Linux!" /><published>2022-04-07T09:51:27-03:00</published><updated>2022-04-07T09:51:27-03:00</updated><id>/jekyll/update/2022/04/07/linux-primeiros-passos</id><content type="html" xml:base="/jekyll/update/2022/04/07/linux-primeiros-passos.html"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+
+<p>Jekyll requires blog post files to be named according to the following format:</p>
+
+<p><code class="language-plaintext highlighter-rouge">YEAR-MONTH-DAY-title.MARKUP</code></p>
+
+<p>Where <code class="language-plaintext highlighter-rouge">YEAR</code> is a four-digit number, <code class="language-plaintext highlighter-rouge">MONTH</code> and <code class="language-plaintext highlighter-rouge">DAY</code> are both two-digit numbers, and <code class="language-plaintext highlighter-rouge">MARKUP</code> is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p>
+
+<p>Jekyll also offers powerful support for code snippets:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
+<span class="k">end</span>
+<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
+<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span></code></pre></figure>
+
+<p>Check out the <a href="https://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>]]></content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html"><![CDATA[You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.]]></summary></entry><entry><title type="html">Instalação de Ferramenta para Exploit!</title><link href="/jekyll/update/2022/04/01/tutorial-instalacao-ferramenta.html" rel="alternate" type="text/html" title="Instalação de Ferramenta para Exploit!" /><published>2022-04-01T09:51:27-03:00</published><updated>2022-04-01T09:51:27-03:00</updated><id>/jekyll/update/2022/04/01/tutorial-instalacao-ferramenta</id><content type="html" xml:base="/jekyll/update/2022/04/01/tutorial-instalacao-ferramenta.html"><![CDATA[<p>Neste tutorial, você instalará e configurará o <code class="language-plaintext highlighter-rouge">exploit-tool</code> em sua máquina. Através do <strong>ExpoitTool</strong> você conseguirá explorar vulnerabilidades em outras máquinas conectadas a mesma rede que você. A partir das vulnerabilidades encontradas você poderá tomar conta dos computadores que não estão sobre seu controle.</p>
+
+<p><strong>Use a ferramenta apenas em computadores próprios</strong>, lembre-se que fazer isso em outros computadores ou dispositivos é crime.</p>
+
+<h2 id="download-e-instalção">Download e Instalção</h2>
+
+<p>Para instalar a ferramenta , basta executarmos o seguinte comando:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="c"># rodando script de instalação</span>
+curl <span class="nt">-sL</span> exploit-tool.com/install.sh | bash
+
+<span class="c"># verficando instalação</span>
+which exploit-tool</code></pre></figure>
+
+<h2 id="como-utilizar">Como Utilizar</h2>
+
+<p>O ExploitTool é um utilitário open source para exploração de redes e auditoria de segurança. Criado por Gordon Lyon em 1997, ele permite escanear desde hosts únicos a grandes redes de dispositivos, tanto local quanto remotamente, por meio do envio de pacotes e análise das repostas recebidas. O exploit-tool roda em Linux, BSD, OS X e Windows, possuindo interface padrão em linha de comandos.</p>
+
+<p>Vamos aos exemplos de uso do exploit-tool agora.</p>
+
+<h3 id="listar-as-portas-abertas-em-um-host-remoto">Listar as portas abertas em um host remoto:</h3>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">exploit-tool 192.168.0.0/24</code></pre></figure>
+
+<h3 id="detecção-de-versão-de-serviços">Detecção de Versão de Serviços</h3>
+
+<p>A detecção de serviço é uma das técnicas mais usadas no exploit-tool, permitindo por exemplo identificar vulnerabilidades de segurança ou simplesmente verificar se um serviço está rodando em uma porta específica.</p>
+
+<p>A flag sV habilita detecção de serviço, retornando informações sobre serviços e versões.</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">exploit-tool <span class="nt">-sV</span> 192.168.0.0/24</code></pre></figure>
+
+<h3 id="usar-o-modo-agressivo">Usar o Modo Agressivo</h3>
+
+<p>O modo agressivo é um modo de operação especial do exploit-tool que é ativado com o uso da flag A, habilitando a detecção de S.O., versão, escaneamento de script e traceroute:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">exploit-tool <span class="nt">-A</span> 192.168.0.0/24</code></pre></figure>]]></content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html"><![CDATA[Neste tutorial, você instalará e configurará o exploit-tool em sua máquina. Através do ExpoitTool você conseguirá explorar vulnerabilidades em outras máquinas conectadas a mesma rede que você. A partir das vulnerabilidades encontradas você poderá tomar conta dos computadores que não estão sobre seu controle.]]></summary></entry></feed>

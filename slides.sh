@@ -1,3 +1,23 @@
+# '########:::::'###::::'##::: ##::'######:::'#######::'##::::'##:
+#  ##.... ##:::'## ##::: ###:: ##:'##... ##:'##.... ##: ###::'###:
+#  ##:::: ##::'##:. ##:: ####: ##: ##:::..:: ##:::: ##: ####'####:
+#  ########::'##:::. ##: ## ## ##:. ######:: ##:::: ##: ## ### ##:
+#  ##.. ##::: #########: ##. ####::..... ##: ##:::: ##: ##. #: ##:
+#  ##::. ##:: ##.... ##: ##:. ###:'##::: ##: ##:::: ##: ##:.:: ##:
+#  ##:::. ##: ##:::: ##: ##::. ##:. ######::. #######:: ##:::: ##:
+#  ..:::::..::..:::::..::..::::..:::......::::.......:::..:::::..:
+#  ::::::::'##:::::'##::::'###::::'########::'########::::::::::::
+#  :::::::: ##:'##: ##:::'## ##::: ##.... ##: ##.....:::::::::::::
+#  :::::::: ##: ##: ##::'##:. ##:: ##:::: ##: ##::::::::::::::::::
+#  :::::::: ##: ##: ##:'##:::. ##: ########:: ######::::::::::::::
+#  :::::::: ##: ##: ##: #########: ##.. ##::: ##...:::::::::::::::
+#  :::::::: ##: ##: ##: ##.... ##: ##::. ##:: ##::::::::::::::::::
+#  ::::::::. ###. ###:: ##:::: ##: ##:::. ##: ########::::::::::::
+#  :::::::::...::...:::..:::::..::..:::::..::........:::::::::::::
+#
+# Author:      Guilherme Vicentin
+# Matrícula:   CP300760X
+# Dísciplina:  Segurança da Informação
 
 # Gerando uma chave alpha numérica com 64 caracteres
 head /dev/urandom --lines 100 |                 \
@@ -17,7 +37,7 @@ gpg --batch --passphrase "${__passphrase}" --symmetric "${__tar_file}"
 
 
 # Cria uma par de chaves para criptografia assimétrica
- ssh-keygen -m PEM -t rsa -b 4096 -f id_rsa
+ssh-keygen -m PEM -t rsa -b 4096 -f id_rsa
 
 # Converte a chave publica em certificado PEM (RFC 4716)
 ssh-keygen -f id_rsa.pub -e -m PKCS8 > id_rsa.pub.pem
@@ -25,10 +45,8 @@ ssh-keygen -f id_rsa.pub -e -m PKCS8 > id_rsa.pub.pem
 #
 echo 'hello' | openssl rsautl -encrypt -pubin -inkey id_rsa.pub.pem
 
-
 # Remove os aquivos originais
 find data -mindepth 1 -maxdepth 1 -not -name "*.gpg" | xargs -I{} rm -rf {}
-
 
 # Decriptografa chave
 cat encrypted.txt | openssl rsautl -decrypt -inkey my_rsa

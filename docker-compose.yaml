@@ -1,0 +1,28 @@
+version: "2"
+
+services:
+  attacker-tool-site:
+    image: "httpd"
+    networks:
+      ransom-network:
+        aliases:
+          - exploit-tool.com
+    volumes:
+      - ./attacker/tool-site:/usr/local/apache2/htdocs/
+  attacker-tutorial-site:
+    image: "httpd"
+    volumes:
+      - ./attacker/tutorial-site:/usr/local/apache2/htdocs/
+    ports:
+      - "8080:80"
+  victim-machine:
+    build: ./victim
+    networks:
+      - ransom-network
+    depends_on:
+      - attacker-tool-site
+    volumes:
+      - /Users/gvicentin/Desktop/ransomware-demo:/home/victim
+
+networks:
+  ransom-network:
