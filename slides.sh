@@ -19,6 +19,7 @@
 #   Matrícula:   CP300760X
 #   Dísciplina:  Segurança da Informação
 #  :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+#  :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 #  INTRODUÇÃO
 #  :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 #
@@ -27,14 +28,15 @@
 #   (Resgate)   (Algo relacionado a computadores)
 #
 #
-#   "  Ransomware é um tipo de malware que ameaça publicar os dados 
-#   pessoais da vítima ou bloquear perpetuamente o acesso a eles, 
-#   a menos que um resgate seja pago. Se implementado adequadamente, 
-#   recuperar os arquivos sem a chave criptográfica é um problema 
+#   "  Ransomware é um tipo de malware que ameaça publicar os dados
+#   pessoais da vítima ou bloquear perpetuamente o acesso a eles,
+#   a menos que um resgate seja pago. Se implementado adequadamente,
+#   recuperar os arquivos sem a chave criptográfica é um problema
 #   considerado intratável  "
 #
 #   ---
 #   Fonte: Wikipedia.
+#
 #
 #
 #  :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -42,7 +44,7 @@
 #  INTRODUÇÃO
 #  :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 #
-#  -> Segundo pesquisa recente, a maioria das organizações está 
+#  -> Segundo pesquisa recente, a maioria das organizações está
 #     mais preocupada com ransomware do que com qualquer outra
 #     ameaças cibernéticas
 #
@@ -51,11 +53,12 @@
 #  -> A principal preocupação é o risco de perda de dados, com a perda
 #     de produtividade e a interrupção das operações logo em seguida
 #
-#  -> 49% era pagariam o resgate à vista e, para outros 25%, 
+#  -> 49% era pagariam o resgate à vista e, para outros 25%,
 #     isso dependia do valor do resgate.
 #
 #   ---
 #   Relatório Global de Ransoware, FortiNet 2021.
+#
 #
 #  :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 #  :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::

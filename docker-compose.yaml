@@ -22,7 +22,7 @@ services:
     depends_on:
       - attacker-tool-site
     volumes:
-      - /Users/gvicentin/Desktop/ransomware-demo:/home/victim
+      - /Users/gvicentin/Desktop/ransomware-demo:/home
 
 networks:
   ransom-network:

