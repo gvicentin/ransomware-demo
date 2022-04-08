@@ -106,13 +106,11 @@ Vulnerabilidade EthernalBlue desenvolvida pela NSA afeta SOs Windows
 
 -------------------------------------------------
 
--> # QUESTÕES  <-
+-> # QUESTÃO  <-
 
 1. Por que usamos criptografia assimétrica para criptografar uma chave
    simétrica? Não podemos pular uma etapa e usar criptografia assimétrica
    para criptografar os arquivo?
-
-2. 
 
 -------------------------------------------------
 
